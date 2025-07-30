@@ -11,23 +11,39 @@ export interface ButtonProps {
   children: React.ReactNode;
 }
 
-export interface PropertyProps {
-  name: string;
-  address: {
-    state: string;
-    city: string;
-    country: string;
-  };
-  rating: number;
-  category: string[];
-  price: number;
-  offers: {
-    bed: string;
-    shower: string;
-    occupants: string;
-  };
-  image: string;
-  discount: string;
+
+
+// interfaces/index.ts
+
+export interface PropertyAddress {
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+  country: string;
 }
 
-// Add other interfaces here as the project grows
+export interface Review {
+  id: string;
+  userId: string;
+  userName: string;
+  avatar: string; // URL to avatar image
+  rating: number; // e.g., 1-5
+  comment: string;
+  date: string; // ISO date string
+}
+
+export interface PropertyProps {
+  id: string;
+  name: string;
+  description: string;
+  pricePerNight: number;
+  rating: number;
+  image: string; // Main image URL
+  images: string[]; // Additional image URLs for gallery
+  address: PropertyAddress;
+  category: string[]; // Amenities/features
+  reviews: Review[];
+  whatWeOffer: string; // For the tabbed description
+  aboutHost: string; // For the tabbed description
+}

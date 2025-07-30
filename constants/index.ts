@@ -1,4 +1,4 @@
-// constants/index.ts
+import { PropertyProps } from "@/interfaces/index";
 
 export const APP_NAME = "ALX Listing App";
 export const API_BASE_URL = "http://localhost:5000/api"; // Example API URL
@@ -27,368 +27,126 @@ export const FILTER_LABELS = [
   "Hot Tub"
 ];
 
-import { PropertyProps } from '../interfaces'; // Import PropertyProps
-
+// Sample property listings for the homepage
+// This can be replaced with real data from an API or database in the future
 export const PROPERTYLISTINGSAMPLE: PropertyProps[] = [
   {
-    name: "Villa Ocean Breeze",
+    id: "1",
+    name: "Luxury Beachfront Villa",
+    description: "Experience unparalleled luxury at this stunning beachfront villa. Perfect for a relaxing getaway with breathtaking ocean views.",
+    pricePerNight: 500,
+    rating: 4.8,
+    image: "https://images.unsplash.com/photo-1570198889895-7d52a7b8e2d4?fit=crop&w=1200&h=800",
+    images: [
+      "https://images.unsplash.com/photo-1570198889895-7d52a7b8e2d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80",
+      "https://images.unsplash.com/photo-1560517721-a4897f2c62c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+      "https://images.unsplash.com/photo-1549447432-888e2c04052f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+      "https://images.unsplash.com/photo-1628177439369-0268480d0d8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+      "https://images.unsplash.com/photo-1588667657279-c5c2a1e6a7c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+    ],
     address: {
-      state: "Seminyak",
-      city: "Bali",
-      country: "Indonesia"
+      street: "123 Ocean Drive",
+      city: "Miami",
+      state: "Florida",
+      zip: "33101",
+      country: "United States",
     },
-    rating: 4.89,
-    category: ["Luxury Villa", "Pool", "Free Parking"],
-    price: 3200,
-    offers: {
-      bed: "3",
-      shower: "3",
-      occupants: "4-6"
-    },
-    image: "https://images.unsplash.com/photo-1570716440590-7603c40130f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
+    category: [
+      "Private Pool",
+      "Ocean View",
+      "Fully Equipped Kitchen",
+      "Air Conditioning",
+      "Free WiFi",
+      "Private Beach Access",
+      "Hot Tub",
+      "BBQ Area",
+      "Parking",
+      "Pet Friendly"
+    ],
+    reviews: [
+      {
+        id: "r1",
+        userId: "u1",
+        userName: "Alice Smith",
+        avatar: "https://randomuser.me/api/portraits/women/1.jpg",
+        rating: 5,
+        comment: "Absolutely stunning property! The views were incredible and the villa was spotless. Highly recommend!",
+        date: "2024-07-15",
+      },
+      {
+        id: "r2",
+        userId: "u2",
+        userName: "Bob Johnson",
+        avatar: "https://randomuser.me/api/portraits/men/2.jpg",
+        rating: 4,
+        comment: "Great location and amenities. A few minor issues with the WiFi but overall a fantastic stay.",
+        date: "2024-07-10",
+      },
+      {
+        id: "r3",
+        userId: "u3",
+        userName: "Carol White",
+        avatar: "https://randomuser.me/api/portraits/women/3.jpg",
+        rating: 5,
+        comment: "The best vacation ever! Every detail was perfect. Can't wait to come back.",
+        date: "2024-07-01",
+      },
+    ],
+    whatWeOffer: "This luxury villa offers a private infinity pool overlooking the ocean, direct beach access, and a fully equipped gourmet kitchen. Enjoy spacious living areas, comfortable bedrooms, and outdoor dining with BBQ facilities. Perfect for families or groups seeking a high-end retreat.",
+    aboutHost: "Your host, Maria, is a local expert with years of experience in hospitality. She is dedicated to ensuring your stay is comfortable and memorable. Maria is always available to assist with any needs or recommendations during your visit.",
   },
   {
-    name: "Mountain Escape Chalet",
+    id: "2",
+    name: "Cozy Mountain Cabin",
+    description: "A rustic and cozy cabin nestled in the heart of the mountains. Ideal for nature lovers and those seeking peace and quiet.",
+    pricePerNight: 150,
+    rating: 4.5,
+    image: "https://images.unsplash.com/photo-1560965319-33177f0a823e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800",
+    images: [
+      "https://images.unsplash.com/photo-1560965319-33177f0a823e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80",
+      "https://images.unsplash.com/photo-1548175896-48b497040445?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+      "https://images.unsplash.com/photo-1531612450393-2775a7c2e88a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+      "https://images.unsplash.com/photo-1584989396116-2c0b784a3c1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+      "https://images.unsplash.com/photo-1555513811-20a811802148?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600&q=80",
+    ],
     address: {
-      state: "Aspen",
-      city: "Colorado",
-      country: "USA"
+      street: "789 Pine Ridge Rd",
+      city: "Asheville",
+      state: "North Carolina",
+      zip: "28801",
+      country: "United States",
     },
-    rating: 4.70,
-    category: ["Mountain View", "Fireplace", "Self Checkin"],
-    price: 1800,
-    offers: {
-      bed: "4",
-      shower: "2",
-      occupants: "5-7"
-    },
-    image: "https://images.unsplash.com/photo-1596395350482-a0e22709210f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "30"
+    category: [
+      "Fireplace",
+      "Mountain View",
+      "Hiking Trails Nearby",
+      "Pet Friendly",
+      "Outdoor Deck",
+      "Board Games",
+      "Kitchenette",
+    ],
+    reviews: [
+      {
+        id: "r4",
+        userId: "u4",
+        userName: "David Green",
+        avatar: "https://randomuser.me/api/portraits/men/4.jpg",
+        rating: 5,
+        comment: "Perfect quiet escape! Loved the fireplace and the hiking trails were fantastic.",
+        date: "2024-06-20",
+      },
+      {
+        id: "r5",
+        userId: "u5",
+        userName: "Eve Black",
+        avatar: "https://randomuser.me/api/portraits/women/5.jpg",
+        rating: 4,
+        comment: "Very cozy, exactly what we needed. A bit isolated, so plan your groceries accordingly!",
+        date: "2024-06-18",
+      },
+    ],
+    whatWeOffer: "This charming cabin features a cozy fireplace, a well-equipped kitchenette, and a spacious outdoor deck with mountain views. Ideal for a serene retreat, with access to numerous hiking and nature trails right outside your door.",
+    aboutHost: "John, your host, is an avid outdoorsman who knows the local area inside and out. He's happy to share tips on the best hiking trails, local attractions, and places to eat. John ensures the cabin is always ready for a comfortable and relaxing stay.",
   },
-  {
-    name: "Cozy Desert Retreat",
-    address: {
-      state: "Palm Springs",
-      city: "California",
-      country: "USA"
-    },
-    rating: 4.92,
-    category: ["Desert View", "Pet Friendly", "Self Checkin"],
-    price: 1500,
-    offers: {
-      bed: "2",
-      shower: "1",
-      occupants: "2-3"
-    },
-    image: "https://images.unsplash.com/photo-1552093863-718a24564c70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
-  },
-  {
-    name: "City Lights Penthouse",
-    address: {
-      state: "New York",
-      city: "New York",
-      country: "USA"
-    },
-    rating: 4.85,
-    category: ["City View", "Free WiFi", "24h Checkin"],
-    price: 4500,
-    offers: {
-      bed: "2",
-      shower: "2",
-      occupants: "2-4"
-    },
-    image: "https://images.unsplash.com/photo-1502672260266-b3aa7f607a04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "15"
-  },
-  {
-    name: "Riverside Cabin",
-    address: {
-      state: "Queenstown",
-      city: "Otago",
-      country: "New Zealand"
-    },
-    rating: 4.77,
-    category: ["Riverside", "Private Dock", "Free Kayaks"],
-    price: 2800,
-    offers: {
-      bed: "3",
-      shower: "2",
-      occupants: "4-6"
-    },
-    image: "https://images.unsplash.com/photo-1505521404118-20a232709292?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "20"
-  },
-  {
-    name: "Modern Beachfront Villa",
-    address: {
-      state: "Sidemen",
-      city: "Bali",
-      country: "Indonesia"
-    },
-    rating: 4.95,
-    category: ["Beachfront", "Private Pool", "Chef Service"],
-    price: 5000,
-    offers: {
-      bed: "5",
-      shower: "4",
-      occupants: "8-10"
-    },
-    image: "https://images.unsplash.com/photo-1592523286392-f08a9062334e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
-  },
-  {
-    name: "Lakeside Chalet",
-    address: {
-      state: "Banff",
-      city: "Alberta",
-      country: "Canada"
-    },
-    rating: 4.65,
-    category: ["Lakeside", "Mountain View", "Hiking Trails"],
-    price: 2300,
-    offers: {
-      bed: "3",
-      shower: "3",
-      occupants: "4-5"
-    },
-    image: "https://images.unsplash.com/photo-1594916892629-1c9f4d71e2e3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "10"
-  },
-  {
-    name: "Tropical Garden Villa",
-    address: {
-      state: "Koh Samui",
-      city: "Surat Thani",
-      country: "Thailand"
-    },
-    rating: 4.80,
-    category: ["Garden", "Free Parking", "Self Checkin"],
-    price: 2750,
-    offers: {
-      bed: "3",
-      shower: "3",
-      occupants: "5-6"
-    },
-    image: "https://images.unsplash.com/photo-1563297125-96156e7d6b38?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "25"
-  },
-  {
-    name: "Urban Loft",
-    address: {
-      state: "Berlin",
-      city: "Berlin",
-      country: "Germany"
-    },
-    rating: 4.60,
-    category: ["City Center", "Free WiFi", "24h Checkin"],
-    price: 2000,
-    offers: {
-      bed: "2",
-      shower: "1",
-      occupants: "2-3"
-    },
-    image: "https://images.unsplash.com/photo-1549517045-bc93de06f0e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
-  },
-  {
-    name: "Secluded Forest Cabin",
-    address: {
-      state: "Whistler",
-      city: "British Columbia",
-      country: "Canada"
-    },
-    rating: 4.72,
-    category: ["Secluded", "Hot Tub", "Self Checkin"],
-    price: 2600,
-    offers: {
-      bed: "4",
-      shower: "2",
-      occupants: "5-7"
-    },
-    image: "https://images.unsplash.com/photo-1502447990176-7917f6b0f16f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "40"
-  },
-  {
-    name: "Cliffside Villa",
-    address: {
-      state: "Amalfi",
-      city: "Salerno",
-      country: "Italy"
-    },
-    rating: 4.93,
-    category: ["Cliffside", "Infinity Pool", "Sea View"],
-    price: 6000,
-    offers: {
-      bed: "4",
-      shower: "4",
-      occupants: "6-8"
-    },
-    image: "https://images.unsplash.com/photo-1570716440590-7603c40130f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "50"
-  },
-  {
-    name: "Coastal Escape Villa",
-    address: {
-      state: "Noosa",
-      city: "Queensland",
-      country: "Australia"
-    },
-    rating: 4.83,
-    category: ["Beachfront", "Pet Friendly", "Free Parking"],
-    price: 3400,
-    offers: {
-      bed: "3",
-      shower: "3",
-      occupants: "4-6"
-    },
-    image: "https://images.unsplash.com/photo-1560935574-e85d1e8e1f57?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
-  },
-  {
-    name: "Historical Villa",
-    address: {
-      state: "Florence",
-      city: "Tuscany",
-      country: "Italy"
-    },
-    rating: 4.67,
-    category: ["Historical", "Free Breakfast", "Self Checkin"],
-    price: 2700,
-    offers: {
-      bed: "2",
-      shower: "2",
-      occupants: "2-4"
-    },
-    image: "https://images.unsplash.com/photo-1577771746404-58e174b8e210?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "35"
-  },
-  {
-    name: "Downtown Apartment",
-    address: {
-      state: "Tokyo",
-      city: "Tokyo",
-      country: "Japan"
-    },
-    rating: 4.81,
-    category: ["City Center", "Free WiFi", "Public Transport"],
-    price: 2200,
-    offers: {
-      bed: "1",
-      shower: "1",
-      occupants: "2"
-    },
-    image: "https://images.unsplash.com/photo-1627914041490-410a724ed22f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
-  },
-  {
-    name: "Luxury Safari Lodge",
-    address: {
-      state: "Serengeti",
-      city: "Mara",
-      country: "Tanzania"
-    },
-    rating: 4.97,
-    category: ["Safari", "Guided Tours", "Free Breakfast"],
-    price: 4500,
-    offers: {
-      bed: "4",
-      shower: "4",
-      occupants: "6-8"
-    },
-    image: "https://images.unsplash.com/photo-1563297125-96156e7d6b38?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "20"
-  },
-  {
-    name: "Countryside Cottage",
-    address: {
-      state: "Cotswolds",
-      city: "Gloucestershire",
-      country: "UK"
-    },
-    rating: 4.58,
-    category: ["Countryside", "Fireplace", "Self Checkin"],
-    price: 1800,
-    offers: {
-      bed: "2",
-      shower: "1",
-      occupants: "2-4"
-    },
-    image: "https://images.unsplash.com/photo-1510784715327-0c67f8f9f0d1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "25"
-  },
-  {
-    name: "Riverfront Mansion",
-    address: {
-      state: "Paris",
-      city: "Île-de-France",
-      country: "France"
-    },
-    rating: 4.86,
-    category: ["Riverfront", "Private Garden", "Self Checkin"],
-    price: 5000,
-    offers: {
-      bed: "4",
-      shower: "3",
-      occupants: "6-8"
-    },
-    image: "https://images.unsplash.com/photo-1502447990176-7917f6b0f16f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "30"
-  },
-  {
-    name: "Ski Chalet",
-    address: {
-      state: "Zermatt",
-      city: "Valais",
-      country: "Switzerland"
-    },
-    rating: 4.75,
-    category: ["Mountain View", "Ski Access", "Fireplace"],
-    price: 3900,
-    offers: {
-      bed: "3",
-      shower: "3",
-      occupants: "4-5"
-    },
-    image: "https://images.unsplash.com/photo-1596395350482-a0e22709210f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
-  },
-  {
-    name: "Island Paradise Villa",
-    address: {
-      state: "Mahe",
-      city: "Victoria",
-      country: "Seychelles"
-    },
-    rating: 4.98,
-    category: ["Beachfront", "Private Pool", "Chef Service"],
-    price: 6500,
-    offers: {
-      bed: "5",
-      shower: "5",
-      occupants: "8-10"
-    },
-    image: "https://images.unsplash.com/photo-1592523286392-f08a9062334e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: "60"
-  },
-  {
-    name: "Clifftop Retreat",
-    address: {
-      state: "Cape Town",
-      city: "Western Cape",
-      country: "South Africa"
-    },
-    rating: 4.78,
-    category: ["Ocean View", "Private Pool", "Self Checkin"],
-    price: 4100,
-    offers: {
-      bed: "3",
-      shower: "3",
-      occupants: "4-5"
-    },
-    image: "https://images.unsplash.com/photo-1596395350482-a0e22709210f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    discount: ""
-  }
 ];
 
